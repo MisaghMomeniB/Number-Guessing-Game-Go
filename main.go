@@ -61,3 +61,26 @@ func main() {
 	fmt.Printf("It took you %v before running out of attempts.\n", elapsedTime)
 	fmt.Printf("Your guesses: %v\n", previousGuesses)
 }
+
+// selectDifficulty prompts the user to select a difficulty level (Easy, Medium, Hard)
+func selectDifficulty() int {
+	var difficulty int
+	for {
+		// Prompt the user for difficulty level selection
+		fmt.Println("Select Difficulty Level: 1 (Easy), 2 (Medium), 3 (Hard)")
+		fmt.Print("Enter your choice: ")
+
+		// Read the user's input and check for errors
+		_, err := fmt.Scanf("%d\n", &difficulty)
+
+		// If there's an error or an invalid choice, prompt the user again
+		if err != nil || (difficulty < Easy || difficulty > Hard) {
+			fmt.Println("Invalid input! Please enter a number between 1 and 3.")
+			// Clear the input buffer to avoid issues with residual data
+			clearBuffer()
+			continue
+		}
+		break
+	}
+	return difficulty
+}
