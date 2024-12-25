@@ -99,3 +99,31 @@ func generateRandomNumber(difficulty int) int {
 	}
 	return rand.Intn(rangeMax) + 1 // Generate random number in the range (1 to rangeMax)
 }
+
+// getUserGuess prompts the user to enter their guess and validates the input
+func getUserGuess() int {
+	var userGuess int
+	for {
+		// Prompt user to enter a guess
+		fmt.Print("Enter your guess (or type 'exit' to quit): ")
+		var input string
+		_, err := fmt.Scanf("%s", &input)
+
+		// If user types "exit", terminate the game gracefully
+		if err == nil && strings.ToLower(input) == "exit" {
+			fmt.Println("Exiting the game. Goodbye!")
+			os.Exit(0) // Exit the program
+		}
+
+		// Try converting the input into an integer
+		_, err = fmt.Sscanf(input, "%d", &userGuess)
+		if err != nil {
+			// If the input is not a valid integer, prompt again
+			fmt.Println("Invalid input! Please enter a valid integer.")
+			continue
+		}
+
+		// Return the valid guess
+		return userGuess
+	}
+}
