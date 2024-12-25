@@ -24,3 +24,6 @@ func main() {
 
 	// Generate the random number based on the selected difficulty
 	numberToGuess := generateRandomNumber(difficulty)
+
+	// Maximum attempts a user can have
+	maxAttempts := 10
