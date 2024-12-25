@@ -18,3 +18,6 @@ const (
 func main() {
 	// Seed the random number generator for randomness
 	rand.Seed(time.Now().UnixNano())
+
+	// Prompt user to select difficulty level
+	difficulty := selectDifficulty()
