@@ -21,3 +21,6 @@ func main() {
 
 	// Prompt user to select difficulty level
 	difficulty := selectDifficulty()
+
+	// Generate the random number based on the selected difficulty
+	numberToGuess := generateRandomNumber(difficulty)
