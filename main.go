@@ -84,3 +84,18 @@ func selectDifficulty() int {
 	}
 	return difficulty
 }
+
+// generateRandomNumber generates a random number based on the selected difficulty level
+func generateRandomNumber(difficulty int) int {
+	var rangeMax int
+	// Define the range of numbers based on difficulty
+	switch difficulty {
+	case Easy:
+		rangeMax = 50 // Easy level (1-50)
+	case Medium:
+		rangeMax = 100 // Medium level (1-100)
+	case Hard:
+		rangeMax = 200 // Hard level (1-200)
+	}
+	return rand.Intn(rangeMax) + 1 // Generate random number in the range (1 to rangeMax)
+}
