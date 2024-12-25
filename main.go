@@ -127,3 +127,9 @@ func getUserGuess() int {
 		return userGuess
 	}
 }
+
+// clearBuffer clears any residual input left in the buffer to avoid issues with subsequent input
+func clearBuffer() {
+	var discard string
+	fmt.Scanln(&discard) // Discard any extra input to clean up the buffer
+}
