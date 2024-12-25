@@ -3,8 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"os"
-	"strings"
 	"time"
 )
 
@@ -56,3 +54,10 @@ func main() {
 			return
 		}
 	}
+
+	// Game over if the user runs out of attempts
+	elapsedTime := time.Since(startTime)
+	fmt.Printf("\nSorry, you've used all %d attempts! The correct number was %d.\n", maxAttempts, numberToGuess)
+	fmt.Printf("It took you %v before running out of attempts.\n", elapsedTime)
+	fmt.Printf("Your guesses: %v\n", previousGuesses)
+}
