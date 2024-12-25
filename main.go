@@ -14,3 +14,7 @@ const (
 	Medium = 2
 	Hard   = 3
 )
+
+func main() {
+	// Seed the random number generator for randomness
+	rand.Seed(time.Now().UnixNano())
