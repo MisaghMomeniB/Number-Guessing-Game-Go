@@ -30,3 +30,6 @@ func main() {
 
 	// Start the timer to track time taken for guessing
 	startTime := time.Now()
+
+	// Track previous guesses to display at the end
+	var previousGuesses []int
