@@ -27,3 +27,6 @@ func main() {
 
 	// Maximum attempts a user can have
 	maxAttempts := 10
+
+	// Start the timer to track time taken for guessing
+	startTime := time.Now()
